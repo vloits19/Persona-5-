@@ -1,0 +1,693 @@
+@import "tailwindcss";
+
+/* ========================================
+   PERSONA 5 ROYAL — DESIGN SYSTEM
+   ======================================== */
+
+@theme {
+    --color-p5-red: #FF0000;
+    --color-p5-red-dark: #CC0000;
+    --color-p5-red-deep: #8B0000;
+    --color-p5-crimson: #DC143C;
+    --color-p5-black: #0A0A0A;
+    --color-p5-black-light: #1A1A1A;
+    --color-p5-white: #F5F5F5;
+    --color-p5-white-pure: #FFFFFF;
+    --color-p5-yellow: #FFD700;
+    --color-p5-yellow-hot: #FFAA00;
+    --color-p5-gray: #2A2A2A;
+    --color-p5-gray-light: #444444;
+    --font-family-persona: var(--font-persona-main), "Impact", sans-serif;
+    --font-family-menu: var(--font-persona-menu), "Impact", sans-serif;
+    --font-family-hatty: var(--font-p5hatty), "Impact", sans-serif;
+    --font-family-markin: var(--font-markin), "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    --font-family-expose: var(--font-expose), "Impact", sans-serif;
+    --font-family-inter: var(--font-inter), Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+
+/* ========================================
+   BASE RESETS
+   ======================================== */
+
+* {
+    cursor: none !important;
+}
+
+@media (pointer: coarse) {
+    * {
+        cursor: auto !important;
+    }
+}
+
+::selection {
+    background: var(--color-p5-red);
+    color: var(--color-p5-white-pure);
+}
+
+html {
+    scroll-behavior: auto;
+    /* Lenis handles smooth scroll */
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--color-p5-black);
+    color: var(--color-p5-white);
+    font-family: var(--font-family-markin);
+    font-size: 16px;
+    line-height: 1.75;
+    letter-spacing: 0.01em;
+    font-weight: 700;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-shadow: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: 0.04em;
+    text-wrap: balance;
+}
+
+p,
+li,
+span,
+div {
+    text-wrap: pretty;
+}
+
+.font-persona {
+    font-family: var(--font-family-persona);
+}
+
+.font-menu {
+    font-family: var(--font-family-menu);
+}
+
+.font-hatty {
+    font-family: var(--font-family-hatty);
+}
+
+.font-markin {
+    font-family: var(--font-family-markin);
+}
+
+.text-hero-title {
+    font-family: var(--font-family-persona);
+    letter-spacing: 0.08em;
+}
+
+.text-nav,
+.text-button,
+.text-label,
+.text-section-title {
+    font-family: var(--font-family-menu);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+}
+
+.text-body,
+.text-description,
+.text-card,
+.text-quote,
+.text-project,
+.text-timeline,
+.text-about {
+    font-family: var(--font-family-markin);
+    font-size: 1rem;
+    line-height: 1.7;
+    letter-spacing: 0.0em;
+    font-weight: 700;
+}
+
+
+/* ========================================
+   TYPOGRAPHY REPAIR OVERRIDES
+   Ensure all visible text remains readable.
+   Removes decorative/styling effects that reduce contrast.
+   ======================================== */
+
+
+/* Target common text elements and text utility classes */
+
+p,
+li,
+span,
+a,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label,
+small,
+strong,
+em,
+.text-body,
+.text-description,
+.text-card,
+.text-quote,
+.text-project,
+.text-timeline,
+.text-about,
+.text-nav,
+.text-button,
+.text-label,
+.text-section-title {
+    color: #FFFFFF !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+    -webkit-text-stroke-width: 0 !important;
+    -webkit-text-stroke-color: transparent !important;
+    mix-blend-mode: normal !important;
+    filter: none !important;
+    backface-visibility: visible !important;
+    outline: none !important;
+}
+
+
+/* Remove any accidental transparent/near-transparent text in descendants */
+
+*:where(p, li, span, a, button, h1, h2, h3, h4, h5, h6, label) {
+    color: inherit !important;
+}
+
+
+/* Ensure headings keep reasonable line-height and spacing for readability */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.15 !important;
+    letter-spacing: 0.02em !important;
+}
+
+
+/* Make sure decorative overlays don't hide text: raise text stacking context */
+
+.section-base,
+header,
+footer,
+main,
+.panel-slash {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* Preserve speech-bubble text color (white overrides should not apply inside white bubbles) */
+
+.speech-bubble,
+.speech-bubble * {
+    color: var(--color-p5-black) !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+
+/* Preserve decorative non-interactive text (watermarks, large decorative numbers) */
+
+.select-none,
+.select-none * {
+    /* Allow the original utility classes (eg text-p5-white/0.02) to apply */
+    color: inherit !important;
+    opacity: inherit !important;
+    text-shadow: none !important;
+}
+
+
+/* Project title specific visible stroke and normal font */
+
+.project-title {
+    font-family: var(--font-family-markin) !important;
+    font-weight: 700 !important;
+    -webkit-text-stroke: 0.25px rgba(0, 0, 0, 0.65) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8), 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+    color: #FFFFFF !important;
+}
+
+
+/* ========================================
+   CUSTOM SCROLLBAR
+   ======================================== */
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-p5-black);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-p5-red);
+    border-radius: 0;
+}
+
+
+/* ========================================
+   NOISE TEXTURE OVERLAY
+   ======================================== */
+
+.noise-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 256px 256px;
+}
+
+
+/* ========================================
+   HALFTONE DOT PATTERN
+   ======================================== */
+
+.halftone {
+    background-image: radial-gradient(circle, var(--color-p5-red) 1px, transparent 1px);
+    background-size: 8px 8px;
+    opacity: 0.08;
+}
+
+.halftone-dense {
+    background-image: radial-gradient(circle, var(--color-p5-red) 1px, transparent 1px);
+    background-size: 4px 4px;
+    opacity: 0.12;
+}
+
+
+/* ========================================
+   DIAGONAL STRIPES
+   ======================================== */
+
+.diagonal-stripes {
+    background-image: repeating-linear-gradient( -45deg, transparent, transparent 8px, rgba(255, 0, 0, 0.06) 8px, rgba(255, 0, 0, 0.06) 16px);
+}
+
+
+/* ========================================
+   COMIC BORDER UTILITIES
+   ======================================== */
+
+.comic-border {
+    border: 3px solid var(--color-p5-black);
+    box-shadow: 4px 4px 0px var(--color-p5-black), -1px -1px 0px var(--color-p5-black);
+}
+
+.comic-border-red {
+    border: 3px solid var(--color-p5-red);
+    box-shadow: 4px 4px 0px var(--color-p5-red-dark), -1px -1px 0px var(--color-p5-red);
+}
+
+.comic-border-white {
+    border: 3px solid var(--color-p5-white);
+    box-shadow: 4px 4px 0px rgba(245, 245, 245, 0.3), -1px -1px 0px var(--color-p5-white);
+}
+
+
+/* ========================================
+   PANEL CLIP PATHS
+   ======================================== */
+
+.panel-slash {
+    clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+}
+
+.panel-angle-right {
+    clip-path: polygon(0% 0%, 100% 5%, 100% 95%, 0% 100%);
+}
+
+.panel-angle-left {
+    clip-path: polygon(0% 5%, 100% 0%, 100% 100%, 0% 95%);
+}
+
+.panel-diamond {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+
+/* ========================================
+   SECTION REVEAL ANIMATIONS
+   ======================================== */
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-120%) skewX(-8deg);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0) skewX(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(120%) skewX(8deg);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0) skewX(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(80px) rotate(-2deg);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes slashReveal {
+    from {
+        clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+    }
+    to {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+}
+
+@keyframes comicPop {
+    0% {
+        transform: scale(0) rotate(-15deg);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.2) rotate(3deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes panelBounce {
+    0% {
+        transform: translateY(40px) rotate(-3deg) scale(0.9);
+        opacity: 0;
+    }
+    60% {
+        transform: translateY(-10px) rotate(1deg) scale(1.02);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0) rotate(0deg) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes screenShake {
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+    10% {
+        transform: translate(-2px, -1px);
+    }
+    20% {
+        transform: translate(2px, 1px);
+    }
+    30% {
+        transform: translate(-1px, 2px);
+    }
+    40% {
+        transform: translate(1px, -1px);
+    }
+    50% {
+        transform: translate(-2px, 1px);
+    }
+    60% {
+        transform: translate(2px, -2px);
+    }
+    70% {
+        transform: translate(-1px, 1px);
+    }
+    80% {
+        transform: translate(1px, -1px);
+    }
+    90% {
+        transform: translate(-1px, -1px);
+    }
+}
+
+@keyframes brushStrokeDraw {
+    from {
+        stroke-dashoffset: 1000;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes floatSlow {
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(2deg);
+    }
+}
+
+@keyframes rotateSlow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulseBorder {
+    0%,
+    100% {
+        box-shadow: 0 0 0 0px rgba(255, 0, 0, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 0 8px rgba(255, 0, 0, 0);
+    }
+}
+
+@keyframes textGlitch {
+    0% {
+        clip-path: inset(40% 0 61% 0);
+        transform: translate(-2px, 2px);
+    }
+    20% {
+        clip-path: inset(92% 0 1% 0);
+        transform: translate(1px, -1px);
+    }
+    40% {
+        clip-path: inset(43% 0 1% 0);
+        transform: translate(-1px, 2px);
+    }
+    60% {
+        clip-path: inset(25% 0 58% 0);
+        transform: translate(2px, 1px);
+    }
+    80% {
+        clip-path: inset(54% 0 7% 0);
+        transform: translate(-2px, -1px);
+    }
+    100% {
+        clip-path: inset(58% 0 43% 0);
+        transform: translate(0);
+    }
+}
+
+
+/* ========================================
+   PERSONA SPEECH BUBBLE
+   ======================================== */
+
+.speech-bubble {
+    position: relative;
+    background: var(--color-p5-white-pure);
+    color: var(--color-p5-black);
+    padding: 1.5rem 2rem;
+    border: 3px solid var(--color-p5-black);
+    border-radius: 0;
+    clip-path: polygon(0% 5%, 3% 0%, 97% 2%, 100% 6%, 98% 94%, 95% 100%, 5% 98%, 0% 95%);
+}
+
+.speech-bubble::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 30px;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 20px solid var(--color-p5-black);
+}
+
+
+/* ========================================
+   RED SLASH ACCENT
+   ======================================== */
+
+.red-slash {
+    position: relative;
+}
+
+.red-slash::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    width: calc(100% + 40px);
+    height: 60%;
+    background: var(--color-p5-red);
+    transform: translateY(-50%) skewX(-12deg);
+    z-index: -1;
+}
+
+
+/* ========================================
+   MAGNETIC BUTTON BASE
+   ======================================== */
+
+.magnetic-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2.2rem;
+    background: var(--color-p5-red);
+    color: var(--color-p5-white-pure);
+    font-family: var(--font-family-menu);
+    font-size: 0.95rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.24em;
+    border: none;
+    clip-path: polygon(8% 0%, 100% 0%, 92% 100%, 0% 100%);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.magnetic-btn:hover {
+    background: var(--color-p5-red-dark);
+    transform: scale(1.05);
+}
+
+.magnetic-btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 2px solid var(--color-p5-white-pure);
+    clip-path: polygon(8% 0%, 100% 0%, 92% 100%, 0% 100%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.magnetic-btn:hover::after {
+    opacity: 1;
+}
+
+
+/* ========================================
+   LOADING SCREEN
+   ======================================== */
+
+.loading-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-p5-black);
+}
+
+.loading-bar {
+    width: 200px;
+    height: 4px;
+    background: var(--color-p5-gray);
+    position: relative;
+    overflow: hidden;
+}
+
+.loading-bar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--color-p5-red);
+    animation: loadingSlide 1.5s ease-in-out infinite;
+}
+
+@keyframes loadingSlide {
+    0% {
+        left: -100%;
+    }
+    50% {
+        left: 0%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+
+/* ========================================
+   SECTION BASE
+   ======================================== */
+
+.section-base {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/* ========================================
+   RESPONSIVE UTILITIES
+   ======================================== */
+
+@media (max-width: 768px) {
+    .comic-border {
+        border-width: 2px;
+        box-shadow: 2px 2px 0px var(--color-p5-black);
+    }
+    .magnetic-btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
