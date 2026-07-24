@@ -56,8 +56,8 @@ export default function CustomCursor() {
       ref={cursorRef}
       className="fixed top-0 left-0 z-[10001] pointer-events-none"
       animate={{
-        width: 18,
-        height: 18,
+        width: 22,
+        height: 22,
       }}
       transition={{ duration: 0 }}
       style={{
@@ -65,6 +65,8 @@ export default function CustomCursor() {
         backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
+        width: 22,
+        height: 22,
         willChange: "transform",
       }}
     />

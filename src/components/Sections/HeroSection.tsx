@@ -207,28 +207,27 @@ export default function HeroSection() {
           </div>
 
           <motion.div
-            className="absolute -left-4 top-8 hidden w-24 rounded-lg border border-p5-red/30 bg-p5-black/70 p-3 md:block"
-            animate={{ y: [0, -12, 0], rotate: [-4, 4, -4] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <p className="text-[0.65rem] uppercase tracking-[0.4em] text-p5-red" style={{ fontFamily: "var(--font-persona-menu)" }}>
-              Motion
-            </p>
-            <p className="mt-2 text-sm uppercase text-p5-white-pure" style={{ fontFamily: "var(--font-persona-main)" }}>
-              Layered depth
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="absolute -bottom-6 -right-4 hidden w-28 rounded-lg border border-p5-red/30 bg-p5-black/70 p-3 md:block"
-            animate={{ y: [0, 10, 0], rotate: [4, -4, 4] }}
+            className="absolute -left-4 top-8 hidden w-24 rounded-lg border border-p5-red/30 bg-p5-black/70 p-3 md:flex md:flex-col md:items-center md:justify-center md:block"
+            animate={{ y: [0, -10, 0], rotate: [-3, 3, -3] }}
             transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
           >
-            <p className="text-[0.65rem] uppercase tracking-[0.4em] text-p5-red" style={{ fontFamily: "var(--font-persona-menu)" }}>
-              Audio
+            <p
+              className="text-sm uppercase tracking-[0.4em] text-p5-red text-center"
+              style={{ fontFamily: "var(--font-persona-menu)", fontSize: "1.1rem", lineHeight: 1 }}
+            >
+              NAH
             </p>
-            <p className="mt-2 text-sm uppercase text-p5-white-pure" style={{ fontFamily: "var(--font-persona-main)" }}>
-              Live FX
+            <p
+              className="mt-0.5 text-base uppercase text-p5-white-pure text-center"
+              style={{ fontFamily: "var(--font-persona-menu)", fontSize: "1.25rem", lineHeight: 0.95, letterSpacing: "0.04em" }}
+            >
+              I&apos;d
+            </p>
+            <p
+              className="mt-0 text-base uppercase text-p5-white-pure text-center"
+              style={{ fontFamily: "var(--font-persona-menu)", fontSize: "1.25rem", lineHeight: 0.95, letterSpacing: "0.04em" }}
+            >
+              Win
             </p>
           </motion.div>
         </motion.div>

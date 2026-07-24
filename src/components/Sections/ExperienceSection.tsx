@@ -19,10 +19,10 @@ const experiences = [
     description: "Explored web development and game ideas through portfolio work, small prototypes, and UI experiments using React, Next.js, and Unity.",
   },
   {
-    year: "2022 — 2023",
-    role: "Creative Learning & Practice",
+    year: "2021 - Present",
+    role: "Editing Video",
     company: "Self-directed",
-    description: "Developed skills in C#, JavaScript, TypeScript, and design-focused development while learning how to build polished digital experiences.",
+    description: "Learning video editing to create engaging content, promote my projects, and continuously improve my creative skills.",
   },
 ];
 
