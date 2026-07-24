@@ -6,7 +6,7 @@ class AudioManagerSingleton {
   private sfxCache: Map<string, HTMLAudioElement[]> = new Map();
   private _bgmEnabled = true;
   private _sfxEnabled = true;
-  private _volume = 0.5;
+  private _volume = 0.25;
   private _sfxVolume = 0.3;
   private initialized = false;
   private fadeInterval: ReturnType<typeof setInterval> | null = null;

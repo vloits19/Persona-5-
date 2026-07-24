@@ -54,6 +54,8 @@ export function AppProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     AudioManager.init();
+    // Ensure BGM volume is initialized to a safer 25%
+    AudioManager.setVolume(0.25);
     AudioManager.setBgmEnabled(bgmEnabled);
     AudioManager.setSfxEnabled(sfxEnabled);
     if (typeof window !== "undefined") {

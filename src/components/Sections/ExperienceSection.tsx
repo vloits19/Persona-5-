@@ -13,7 +13,7 @@ const experiences = [
     description: "Studying game development while building creative projects that combine coding, UI design, and interactive storytelling.",
   },
   {
-    year: "2023 — 2024",
+    year: "2024 — Present",
     role: "Independent Developer",
     company: "Personal Projects",
     description: "Explored web development and game ideas through portfolio work, small prototypes, and UI experiments using React, Next.js, and Unity.",
