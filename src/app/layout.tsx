@@ -12,6 +12,9 @@ import CustomCursor from "@/components/Cursor/CustomCursor";
 export const metadata: Metadata = {
   title: "Fawwaz | Game Developer & Web Developer",
   description: "Portfolio of Fawwaz Anggita Yumna Qotrunnada — a game developer, web developer, and UI/UX enthusiast from Banjarnegara, Indonesia.",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({

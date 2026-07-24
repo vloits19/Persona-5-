@@ -110,7 +110,7 @@ export default function HeroSection() {
             className="mb-4 text-xs sm:text-sm uppercase text-p5-red"
             style={{ fontFamily: "var(--font-persona-menu)", letterSpacing: "0.32em", lineHeight: 1.4 }}
           >
-            Portfolio // Fawwaz
+            Persona 5
           </p>
 
           <h1
@@ -200,7 +200,7 @@ export default function HeroSection() {
                   Featured Work
                 </p>
                 <p className="text-xl uppercase tracking-[0.15em] text-p5-white-pure" style={{ fontFamily: "var(--font-persona-main)", lineHeight: 1.3 }}>
-                  Game dev • web • UI craft
+                  Game dev • web • Video Editor
                 </p>
               </div>
             </div>

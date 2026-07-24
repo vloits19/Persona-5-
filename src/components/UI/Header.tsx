@@ -37,7 +37,7 @@ export default function Header() {
           className="hidden sm:inline text-p5-white-pure text-base uppercase"
           style={{ fontFamily: "var(--font-persona-menu)", letterSpacing: "0.18em", lineHeight: 1.2 }}
         >
-          FAWWAZ // PORTFOLIO
+          FAWWAZ
         </span>
       </motion.div>
 
