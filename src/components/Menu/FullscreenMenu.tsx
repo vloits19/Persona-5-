@@ -9,7 +9,7 @@ import { useCallback } from "react";
 const sectionHints = ["Home", "About", "Skills", "Projects", "Experience", "Contact", "Thank You"];
 
 export default function FullscreenMenu() {
-  const { isMenuOpen, setIsMenuOpen, setCurrentSection, setIsTransitioning } = useApp();
+  const { isMenuOpen, setIsMenuOpen, setCurrentSection } = useApp();
   const { playHover, playSelect, playBack } = useSFX();
 
   const handleNavigate = useCallback(
@@ -17,12 +17,9 @@ export default function FullscreenMenu() {
       playSelect();
       setCurrentSection(index);
       setIsMenuOpen(false);
-      setIsTransitioning(true);
-      setTimeout(() => {
-        scrollToSection(SECTIONS[index].id);
-      }, 400);
+      scrollToSection(SECTIONS[index].id);
     },
-    [playSelect, setCurrentSection, setIsMenuOpen, setIsTransitioning]
+    [playSelect, setCurrentSection, setIsMenuOpen]
   );
 
   const handleClose = useCallback(() => {

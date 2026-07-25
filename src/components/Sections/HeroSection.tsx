@@ -18,7 +18,6 @@ export default function HeroSection() {
   const mounted = useMounted();
   const isInView = useInView(sectionRef, { once: true });
   const { playHover } = useSFX();
-  const { setIsTransitioning } = useApp();
 
   useEffect(() => {
     if (!mounted || !isInView || !nameRef.current) return;
@@ -53,10 +52,7 @@ export default function HeroSection() {
 
   const handleExplore = () => {
     playHover();
-    setIsTransitioning(true);
-    window.setTimeout(() => {
-      scrollToSection("about");
-    }, 400);
+    scrollToSection("about");
   };
 
   return (
